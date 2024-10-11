@@ -30,7 +30,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="150dp"
                 android:layout_marginTop="50sp"
-                app:srcCompat="@drawable/logoo">
+                app:srcCompat="@drawable/logoo"/>
         </RelativeLayout>
 
         <TextView
