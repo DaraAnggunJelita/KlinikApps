@@ -2,30 +2,28 @@ package login.dara.klinik
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-
-class PageRegister : AppCompatActivity() {
-    private lateinit var  textView7 : TextView
+class StarterPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_page_register)
+        setContentView(R.layout.activity_starter_page)
+        val buttonGetStarted: Button = findViewById(R.id.button)
 
-        textView7 = findViewById(R.id.textView7)
+        buttonGetStarted.setOnClickListener {
+            val intent = Intent(this, PageLogin::class.java)
+            startActivity(intent)
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
-        textView7.setOnClickListener(){
-            val intent = Intent(this, PageLogin::class.java)
-            startActivity(intent)
             }
         }
 }
